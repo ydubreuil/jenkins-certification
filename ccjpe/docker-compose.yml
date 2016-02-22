@@ -1,0 +1,18 @@
+cjoc:
+    build: ./cjoc
+    volumes:
+      - ccjpe_cjoc_home:/var/jenkins_home
+    environment:
+      - JENKINS_SLAVE_AGENT_PORT=4000
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+
+cm1:
+    build: ./cm
+    volumes:
+      - ccjpe_cm_home:/var/jenkins_home
+    environment:
+      - JENKINS_SLAVE_AGENT_PORT=4001
+      - JENKINS_OPTS=--httpPort=8081
+    net: "container:cjoc"
