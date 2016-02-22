@@ -1,0 +1,67 @@
+FROM jenkins:1.625.3
+RUN mkdir -p /usr/share/jenkins/ref/plugins/
+RUN curl \
+	-L $JENKINS_UC/download/plugins/ace-editor/1.0.1/ace-editor.hpi -o /usr/share/jenkins/ref/plugins/ace-editor.jpi \
+	-L $JENKINS_UC/download/plugins/ant/1.2/ant.hpi -o /usr/share/jenkins/ref/plugins/ant.jpi \
+	-L $JENKINS_UC/download/plugins/antisamy-markup-formatter/1.1/antisamy-markup-formatter.hpi -o /usr/share/jenkins/ref/plugins/antisamy-markup-formatter.jpi \
+	-L $JENKINS_UC/download/plugins/authentication-tokens/1.2/authentication-tokens.hpi -o /usr/share/jenkins/ref/plugins/authentication-tokens.jpi \
+	-L $JENKINS_UC/download/plugins/aws-java-sdk/1.10.45/aws-java-sdk.hpi -o /usr/share/jenkins/ref/plugins/aws-java-sdk.jpi \
+	-L $JENKINS_UC/download/plugins/build-pipeline-plugin/1.4.9/build-pipeline-plugin.hpi -o /usr/share/jenkins/ref/plugins/build-pipeline-plugin.jpi \
+	-L $JENKINS_UC/download/plugins/cloudbees-credentials/3.3/cloudbees-credentials.hpi -o /usr/share/jenkins/ref/plugins/cloudbees-credentials.jpi \
+	-L $JENKINS_UC/download/plugins/cloudbees-folder/5.1/cloudbees-folder.hpi -o /usr/share/jenkins/ref/plugins/cloudbees-folder.jpi \
+	-L $JENKINS_UC/download/plugins/copyartifact/1.37/copyartifact.hpi -o /usr/share/jenkins/ref/plugins/copyartifact.jpi \
+	-L $JENKINS_UC/download/plugins/create-fingerprint/1.2/create-fingerprint.hpi -o /usr/share/jenkins/ref/plugins/create-fingerprint.jpi \
+	-L $JENKINS_UC/download/plugins/credentials/1.25/credentials.hpi -o /usr/share/jenkins/ref/plugins/credentials.jpi \
+	-L $JENKINS_UC/download/plugins/cvs/2.11/cvs.hpi -o /usr/share/jenkins/ref/plugins/cvs.jpi \
+	-L $JENKINS_UC/download/plugins/docker-build-publish/1.1/docker-build-publish.hpi -o /usr/share/jenkins/ref/plugins/docker-build-publish.jpi \
+	-L $JENKINS_UC/download/plugins/docker-commons/1.3.1/docker-commons.hpi -o /usr/share/jenkins/ref/plugins/docker-commons.jpi \
+	-L $JENKINS_UC/download/plugins/docker-plugin/0.16.0/docker-plugin.hpi -o /usr/share/jenkins/ref/plugins/docker-plugin.jpi \
+	-L $JENKINS_UC/download/plugins/durable-task/1.7/durable-task.hpi -o /usr/share/jenkins/ref/plugins/durable-task.jpi \
+	-L $JENKINS_UC/download/plugins/ec2/1.31/ec2.hpi -o /usr/share/jenkins/ref/plugins/ec2.jpi \
+	-L $JENKINS_UC/download/plugins/email-ext/2.41.2/email-ext.hpi -o /usr/share/jenkins/ref/plugins/email-ext.jpi \
+	-L $JENKINS_UC/download/plugins/external-monitor-job/1.4/external-monitor-job.hpi -o /usr/share/jenkins/ref/plugins/external-monitor-job.jpi \
+	-L $JENKINS_UC/download/plugins/git/2.4.2/git.hpi -o /usr/share/jenkins/ref/plugins/git.jpi \
+	-L $JENKINS_UC/download/plugins/git-client/1.19.5/git-client.hpi -o /usr/share/jenkins/ref/plugins/git-client.jpi \
+	-L $JENKINS_UC/download/plugins/git-server/1.6/git-server.hpi -o /usr/share/jenkins/ref/plugins/git-server.jpi \
+	-L $JENKINS_UC/download/plugins/icon-shim/2.0.2/icon-shim.hpi -o /usr/share/jenkins/ref/plugins/icon-shim.jpi \
+	-L $JENKINS_UC/download/plugins/instant-messaging/1.35/instant-messaging.hpi -o /usr/share/jenkins/ref/plugins/instant-messaging.jpi \
+	-L $JENKINS_UC/download/plugins/ircbot/2.26/ircbot.hpi -o /usr/share/jenkins/ref/plugins/ircbot.jpi \
+	-L $JENKINS_UC/download/plugins/jabber/1.35/jabber.hpi -o /usr/share/jenkins/ref/plugins/jabber.jpi \
+	-L $JENKINS_UC/download/plugins/jackson2-api/2.5.4/jackson2-api.hpi -o /usr/share/jenkins/ref/plugins/jackson2-api.jpi \
+	-L $JENKINS_UC/download/plugins/javadoc/1.1/javadoc.hpi -o /usr/share/jenkins/ref/plugins/javadoc.jpi \
+	-L $JENKINS_UC/download/plugins/jquery/1.11.2-0/jquery.hpi -o /usr/share/jenkins/ref/plugins/jquery.jpi \
+	-L $JENKINS_UC/download/plugins/jquery-detached/1.2/jquery-detached.hpi -o /usr/share/jenkins/ref/plugins/jquery-detached.jpi \
+	-L $JENKINS_UC/download/plugins/junit/1.10/junit.hpi -o /usr/share/jenkins/ref/plugins/junit.jpi \
+	-L $JENKINS_UC/download/plugins/ldap/1.11/ldap.hpi -o /usr/share/jenkins/ref/plugins/ldap.jpi \
+	-L $JENKINS_UC/download/plugins/mailer/1.16/mailer.hpi -o /usr/share/jenkins/ref/plugins/mailer.jpi \
+	-L $JENKINS_UC/download/plugins/mapdb-api/1.0.6.0/mapdb-api.hpi -o /usr/share/jenkins/ref/plugins/mapdb-api.jpi \
+	-L $JENKINS_UC/download/plugins/matrix-auth/1.1/matrix-auth.hpi -o /usr/share/jenkins/ref/plugins/matrix-auth.jpi \
+	-L $JENKINS_UC/download/plugins/matrix-project/1.6/matrix-project.hpi -o /usr/share/jenkins/ref/plugins/matrix-project.jpi \
+	-L $JENKINS_UC/download/plugins/maven-plugin/2.7.1/maven-plugin.hpi -o /usr/share/jenkins/ref/plugins/maven-plugin.jpi \
+	-L $JENKINS_UC/download/plugins/mock-security-realm/1.3/mock-security-realm.hpi -o /usr/share/jenkins/ref/plugins/mock-security-realm.jpi \
+	-L $JENKINS_UC/download/plugins/node-iterator-api/1.5/node-iterator-api.hpi -o /usr/share/jenkins/ref/plugins/node-iterator-api.jpi \
+	-L $JENKINS_UC/download/plugins/pam-auth/1.1/pam-auth.hpi -o /usr/share/jenkins/ref/plugins/pam-auth.jpi \
+	-L $JENKINS_UC/download/plugins/parameterized-trigger/2.30/parameterized-trigger.hpi -o /usr/share/jenkins/ref/plugins/parameterized-trigger.jpi \
+	-L $JENKINS_UC/download/plugins/promoted-builds/2.25/promoted-builds.hpi -o /usr/share/jenkins/ref/plugins/promoted-builds.jpi \
+	-L $JENKINS_UC/download/plugins/radiatorviewplugin/1.26/radiatorviewplugin.hpi -o /usr/share/jenkins/ref/plugins/radiatorviewplugin.jpi \
+	-L $JENKINS_UC/download/plugins/scm-api/1.0/scm-api.hpi -o /usr/share/jenkins/ref/plugins/scm-api.jpi \
+	-L $JENKINS_UC/download/plugins/script-security/1.17/script-security.hpi -o /usr/share/jenkins/ref/plugins/script-security.jpi \
+	-L $JENKINS_UC/download/plugins/skype-notifier/1.1.0/skype-notifier.hpi -o /usr/share/jenkins/ref/plugins/skype-notifier.jpi \
+	-L $JENKINS_UC/download/plugins/sms/1.2/sms.hpi -o /usr/share/jenkins/ref/plugins/sms.jpi \
+	-L $JENKINS_UC/download/plugins/ssh-credentials/1.11/ssh-credentials.hpi -o /usr/share/jenkins/ref/plugins/ssh-credentials.jpi \
+	-L $JENKINS_UC/download/plugins/ssh-slaves/1.9/ssh-slaves.hpi -o /usr/share/jenkins/ref/plugins/ssh-slaves.jpi \
+	-L $JENKINS_UC/download/plugins/subversion/2.5.7/subversion.hpi -o /usr/share/jenkins/ref/plugins/subversion.jpi \
+	-L $JENKINS_UC/download/plugins/token-macro/1.12.1/token-macro.hpi -o /usr/share/jenkins/ref/plugins/token-macro.jpi \
+	-L $JENKINS_UC/download/plugins/translation/1.10/translation.hpi -o /usr/share/jenkins/ref/plugins/translation.jpi \
+	-L $JENKINS_UC/download/plugins/windows-slaves/1.0/windows-slaves.hpi -o /usr/share/jenkins/ref/plugins/windows-slaves.jpi \
+	-L $JENKINS_UC/download/plugins/workflow-aggregator/1.13/workflow-aggregator.hpi -o /usr/share/jenkins/ref/plugins/workflow-aggregator.jpi \
+	-L $JENKINS_UC/download/plugins/workflow-api/1.13/workflow-api.hpi -o /usr/share/jenkins/ref/plugins/workflow-api.jpi \
+	-L $JENKINS_UC/download/plugins/workflow-basic-steps/1.13/workflow-basic-steps.hpi -o /usr/share/jenkins/ref/plugins/workflow-basic-steps.jpi \
+	-L $JENKINS_UC/download/plugins/workflow-cps/1.13/workflow-cps.hpi -o /usr/share/jenkins/ref/plugins/workflow-cps.jpi \
+	-L $JENKINS_UC/download/plugins/workflow-cps-global-lib/1.13/workflow-cps-global-lib.hpi -o /usr/share/jenkins/ref/plugins/workflow-cps-global-lib.jpi \
+	-L $JENKINS_UC/download/plugins/workflow-durable-task-step/1.13/workflow-durable-task-step.hpi -o /usr/share/jenkins/ref/plugins/workflow-durable-task-step.jpi \
+	-L $JENKINS_UC/download/plugins/workflow-job/1.13/workflow-job.hpi -o /usr/share/jenkins/ref/plugins/workflow-job.jpi \
+	-L $JENKINS_UC/download/plugins/workflow-scm-step/1.13/workflow-scm-step.hpi -o /usr/share/jenkins/ref/plugins/workflow-scm-step.jpi \
+	-L $JENKINS_UC/download/plugins/workflow-step-api/1.13/workflow-step-api.hpi -o /usr/share/jenkins/ref/plugins/workflow-step-api.jpi \
+	-L $JENKINS_UC/download/plugins/workflow-support/1.13/workflow-support.hpi -o /usr/share/jenkins/ref/plugins/workflow-support.jpi
+
