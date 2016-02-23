@@ -22,3 +22,17 @@ For _Certified CloudBees Jenkins Platform Engineer_ exam:
     docker-compose up
 
 When the container hosting Jenkins is ready, browse http://localhost:8080
+
+## Clean up
+
+To remove docker containers, launch
+
+    docker-compose rm -f
+
+To clean up volumes, launch
+
+    docker volume rm ccjpe_cjoc_home ccjpe_cm_home cje_jenkins_home
+
+To rebuild
+
+    docker-compose up --force-recreate
