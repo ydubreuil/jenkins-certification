@@ -1,6 +1,6 @@
 jenkins:
     build: .
     volumes:
-      - cje_jenkins_home:/var/jenkins_home
+      - ./cje_jenkins_home:/var/jenkins_home
     ports:
       - "8080:8080"
