@@ -23,7 +23,7 @@ For _Certified CloudBees Jenkins Platform Engineer_ exam:
 
 When the container hosting Jenkins is ready, browse http://localhost:8080
 
-## Clean up
+## Cheat sheet
 
 To remove docker containers, launch
 
@@ -33,6 +33,7 @@ To clean up volumes, launch
 
     docker volume rm ccjpe_cjoc_home ccjpe_cm_home cje_jenkins_home
 
-To rebuild
+To rebuild docker images
 
+    docker-compose build
     docker-compose up --force-recreate
