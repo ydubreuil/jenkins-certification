@@ -34,6 +34,7 @@ cloudbees-quiet-start:1.2:not-pinned
 cloudbees-secure-copy:3.8:not-pinned
 cloudbees-ssh-slaves:1.3:not-pinned
 cloudbees-support:3.6:pinned
+cloudbees-template:4.20
 cloudbees-view-creation-filter:1.3:not-pinned
 cloudbees-wasted-minutes-tracker:3.8:pinned
 cloudbees-workflow-aggregator:1.8:not-pinned
