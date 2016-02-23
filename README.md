@@ -39,3 +39,7 @@ To rebuild docker images
 
     docker-compose build
     docker-compose up --force-recreate
+
+### For mac user
+
+As we are using `docker-machine` to have our `$DOCKER_HOST`, we cannot access containers through `127.0.0.1`. However, the communication between CJOC and CJE is done inside a private network (see `docker-compose.yml` file). So, in the CJOC global configuration, you **must** keep the `127.0.0.1` even if you access the UI through `docker-machine ip` value. You will have the *reverse proxy warning message* on the manage page, but don't worry about it.
